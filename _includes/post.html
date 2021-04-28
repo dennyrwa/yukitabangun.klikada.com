@@ -1,0 +1,27 @@
+<section id="more-features">
+    <div class="container">
+        <div class="section-header">
+            <h3 class="section-title">Artikel dan Blog</h3>
+            <span class="section-divider"></span>
+            <p class="section-description">Artikel dan Blog tentang pembangunan, desain dan renovasi rumah</p>
+        </div>
+        <div class="row gy-4">
+            {% for post in site.posts limit: 4 %}
+            <div class="col-lg-6">
+                <div class="container row">
+                  <div class="col-lg-6 col-md-6">
+                    <div class="icon">
+                      <amp-img lightbox="post" class="gallery-popup" alt="{{ post.alt }}" src="{{ post.photos }}" width="3" height="2" layout="responsive"></amp-img>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6">
+                    <h4 class="title"><a href="{{ post.url }}">{{ post.title }}</a></h4>
+                    <p>{{ post.date | date: "%-d %B %Y"}}</p>
+                    <p class="description">{{ post.description }}</p>
+                  </div>  
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

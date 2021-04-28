@@ -1,0 +1,42 @@
+---
+layout: home
+title: Jasa dan Layanan
+photos: https://sewamobiltulungagung.com/img/gili-ketapang.jpg
+---
+<main id="main">
+    <section id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h3 class="section-title">{{ site.section-5 }}</h3>
+                <span class="section-divider"></span>
+                <!-- <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p> -->
+            </div>
+            <div class="row">
+                {% for item in site.data-products limit:6 %}
+                <div class="col-lg-4 col-md-6">
+                    <div class="gallery-item wow fadeInUp">
+                        <a class="gallery-popup">
+                            <amp-img lightbox="caption" class="gallery-popup" alt="{{ item.amp-img-alt }}" src="{{ item.amp-img-scr }}" width="{{ item.amp-img-width }}" height="{{ item.amp-img-height }}" layout="{{ item.amp-img-layout }}" aria-describedby="{{ item.title }}"></amp-img>
+                        </a>
+                        <div hidden id="{{ item.title }}">
+                            {{ item.title }}
+                            <br>{{ item.list-1 }}
+                            <br>{{ item.list-2 }}
+                            <br>{{ item.list-3 }}
+                            <br>{{ item.list-4 }}
+                            <br>{{ item.list-5 }}
+                            <br>{{ item.list-6 }}
+                        </div>
+                    </div>
+                    <div class="box wow fadeInLeft">
+                        <h3>{{ item.title }}</h3>
+                        <p>{{ item.list-1 }}</p>
+                        <a href="{{ item.url }}" class="get-started-btn">Selengkapnya</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% include contact.html %}
+</main>
